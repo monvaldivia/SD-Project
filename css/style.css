@@ -1,22 +1,47 @@
-body{
 
-    background-color: antiquewhite;
-    font-family: 'Times New Roman', Times, serif;
+*{
+    font-size: 1.5rem;
 }
-h1{
-    font-size: 18px;
+
+
+
+.heading
+{
+    width: 50%;
+    background-color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+
 }
-a{
-    color:bisque;
-    text-decoration:text-underline-position; 
+
+
+
+
+.searchBar{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:black;
+    padding: 0.5rem;
+    border-radius: 0.rem;
+    color: white;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+ 
+  
 }
-a:hover{
-    color: antiquewhite;
-    text-decoration: none;
+input{
+    margin: 0 0.5rem 0 0.5rem;
+    display:flex;
+    border: none;
+    outline: none;
+    background:black;
+    color:white;
 }
-h2{ 
-   font-size: 16px; 
-}
-p{
-    font-size: 14px;
+::placeholder{
+    color: white;
 }
