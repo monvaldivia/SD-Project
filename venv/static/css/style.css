@@ -1,0 +1,47 @@
+
+*{
+    font-size: 1.5rem;
+}
+
+
+
+.heading
+{
+    width: 50%;
+    background-color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+
+}
+
+
+
+
+.searchBar{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:black;
+    padding: 0.5rem;
+    border-radius: 0.rem;
+    color: white;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+ 
+  
+}
+input{
+    margin: 0 0.5rem 0 0.5rem;
+    display:flex;
+    border: none;
+    outline: none;
+    background:black;
+    color:white;
+}
+::placeholder{
+    color: white;
+}
