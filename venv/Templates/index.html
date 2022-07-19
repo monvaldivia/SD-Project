@@ -20,19 +20,15 @@
        
 </div>
 
-<body>
-    <div id="parent">
-        <div class="searchBar">
-            <div class="fa fa-search"></div>
-            <input type="text" placeholder="Search"/>
-            <div class="fa fa-times"></div>
-          
-            
-            
-        </div>
-    </div>
 
- 
+<body>
+    {% include 'searchBar.html' %}
+    <br/>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+  </div>
+
 </body>
 
  </html>

@@ -1,0 +1,91 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-11">
+        <div class="row">
+            <h1>TREC SEARCH</h1>
+        </div>
+        <div class="row">
+            <form method="post">
+                <div class="row">
+                    <div class="mb-3 col-11">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Search..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-11 col-2">
+                        <select class="form-select" name="filter" id="filter">
+							<option value="qid">qid</option>
+                            <option value="docid">docid</option>
+                            <option value="docno">docno</option>
+                            <option value="rank">ranking</option>
+							<option value="query">query</option>
+                            <option value="gender">gender</option>
+                            <option value="quality score">quality score</option>
+                            <option value="geographic locations">geographic locations</option>
+                            <option value="genders">genders</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-2">
+                        <input type="submit" value="Search" class="btn btn-primary" id="search">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mb-3">
+            <h1>Search Results:</h1>
+        </div>
+        {% if search_results %}
+        <div id="result_table">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>qid</th>
+                        <th>docid</th>
+						<th>docno</th>
+                        <th>ranking</th>
+                        <th>score</th>
+                        <th>query</th>
+                        <th>gender</th>
+                        <th>quality_score</th>
+                        <th>geographic_locations</th>
+                        <th>genders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in search_results.df.iterrows() %}
+                    <tr>
+                        <td>{{row.qid}}</td>
+                        <td>{{row.docid}}</td>
+                        <td>{{row.docno}}</td>
+                        <td>{{row.ranking}}</td>
+                        <td>{{row.score}}</td>
+                        <td>{{row.query}}</td>
+						<td>{{row.gender}}</td>
+                        <td>{{row.quality_score}}</td>
+                        <td>{{row.geographic_locations}}</td>
+                        <td>{{row.genders}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <h5>No results found.</h5>
+            {% endif %}
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+</body>
+
+</html> 
